@@ -39,6 +39,19 @@ class _MyAppState extends State<MyApp> {
 
   }
 
+  Widget makeRadioTiles() {
+    var list = [];
+
+    for(int i=0; i<4; i++){
+      list.add(RadioListTile(value: i, groupValue: _value2, onChanged: _setValue2));
+    }
+
+    Column column = Column(children:list);
+
+    return column;
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,6 +64,7 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               children: [
                 makeRadios(),
+                makeRadioTiles()
               ],
             ),
           ),
